@@ -9,6 +9,7 @@ def train(
     epochs=1000,
     batch_size = 32,
     lr=0.01):
+    
     num_samples = X.shape[0]
 
     for epoch in range(epochs):
@@ -25,11 +26,12 @@ def train(
             A = Xb 
             for layer in model: 
                 A = layer.forward(A)
-
+            
             y_hat = A 
-
+            
             #____Loss____
-            loss = loss_func.forward(y_hat ,yb)
+            loss = loss_func.forward(y_hat ,yb) #cái này đang là 1 vector
+            batch_loss = loss.mean()
             current_batch += 1
 
             #____backward____
@@ -47,6 +49,6 @@ def train(
 
         #____logging____
         if epoch%50 == 0   :
-            print("Epoch " , epoch, " loss = ", loss)
+            print("Epoch " , epoch,"|",  " loss = ", batch_loss)
 
 

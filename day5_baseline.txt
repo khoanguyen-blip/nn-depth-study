@@ -1,0 +1,24 @@
+--------BASELINE SETUP--------
+.Dataset : circle(N = 2000, r =0.5)
+.Task: binary classification 
+.Loss function used: BCE 
+.Output : Sigmoid
+.Metric : sanity accuracy( 100% <=> 100 samples) 
+
+
+--------BASELINE ARCHITECTURE--------
+Input dim : 2 
+Hidden width : 16
+Activation : ReLU
+Output dim = 1
+Current depth = 1 
+
+
+--------TRAINING PROTOCOL--------
+Epochs = 1000
+Batch size = 32
+Learning rate = 0.1
+Optimizer : SGD
+
+Note: -used 100 samples to resemble 100% for simpler code implementation(proper accuracy evaluation will be refined)
+      -established a controlled setting where the only varying factor is the network 's depth(number of hidden layers) 
