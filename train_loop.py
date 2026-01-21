@@ -11,7 +11,7 @@ def train(
     lr=0.01):
     
     num_samples = X.shape[0]
-
+    loss_history = []
     for epoch in range(epochs):
         #____Shuffle____
         perm = np.random.permutation(num_samples)
@@ -32,6 +32,7 @@ def train(
             #____Loss____
             loss = loss_func.forward(y_hat ,yb) #cái này đang là 1 vector
             batch_loss = loss.mean()
+            loss_history.append(batch_loss)
             current_batch += 1
 
             #____backward____
@@ -47,8 +48,9 @@ def train(
                     layer.b -= lr*layer.db 
 
 
-        #____logging____
-        if epoch%50 == 0   :
-            print("Epoch " , epoch,"|",  " loss = ", batch_loss)
-
-
+        
+    return loss_history
+#loss_history đang show từng batch
+def show_loss(epochs_loss,step = 50): 
+    for i in range(0,len(epochs_loss),step): 
+        print("EPOCHS :" ,i,"| LOSS: ",epochs_loss[i])
