@@ -1,0 +1,2 @@
+REFLECTION: 
+- Baseline circle is reproducible and loss behavior is consistent with Day 6 observation.
