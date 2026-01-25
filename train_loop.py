@@ -37,16 +37,21 @@ def train(
 
             #____backward____
             dA = loss_func.backward()
+            
             for layer in reversed(model):
+            
                 dA = layer.backward(dA) 
 
             #điểm cải tiến : update bằng loop
+           
 
             for layer in model: 
                 if hasattr(layer, "W"):
                     layer.W -= lr*layer.dW 
-                    layer.b -= lr*layer.db 
+                    layer.b -= lr*layer.db
 
+                
+                
 
         
     return loss_history

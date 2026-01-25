@@ -10,7 +10,8 @@ class ReLU:
 
 class Sigmoid:
     def forward(self,Z): 
-        self.A = 1/(1 + np.exp(-Z) )
+        Z_clip = np.clip(Z,-500,500)
+        self.A = 1/(1 + np.exp(-Z_clip) )
         return self.A
 
     def backward(self,dA): 

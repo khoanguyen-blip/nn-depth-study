@@ -4,7 +4,8 @@ class Linear:
     def __init__(self, in_dims, neurons_num):
         self.in_dims = in_dims
         self.neurons_num = neurons_num
-        W = np.random.randn(in_dims,neurons_num)*0.01
+        #He initialization
+        W = np.random.randn(in_dims,neurons_num)*np.sqrt(2/in_dims)
         b = np.zeros((1,neurons_num))
         self.W = W 
         self.b = b

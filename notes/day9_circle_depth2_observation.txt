@@ -1,0 +1,36 @@
+Day 9 - Depth2 Circle Classification 
+Loss observation : 
+(C1) Global Trend : 
+-Smooth decrease
+(C2) Stability : 
+-Stable with slight oscillations
+(C3) Plateau Phase: 
+-After approximately 400 epochs it exhibitted a plateau-like behavior
+(C4) Late-stage gain: 
+-Diminishing improvement
+
+
+RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a very narrow range
+0.0101   0.0095   0.0102   0.0091   0.0094   0.0100   0.0093   0.0094   0.0089   0.0094
+  0.0092   0.0090   0.0098   0.0094   0.0091   0.0090   0.0086   0.0091   0.0092   0.0104
+  0.0091   0.0097   0.0096   0.0090   0.0094   0.0092   0.0088   0.0098   0.0088   0.0095
+  0.0092   0.0090   0.0090   0.0089   0.0089   0.0099   0.0091   0.0094   0.0090   0.0096
+  0.0091   0.0098   0.0090   0.0090   0.0093   0.0088   0.0088   0.0094   0.0096   0.0093
+  0.0088   0.0093   0.0097   0.0086   0.0091   0.0090   0.0089   0.0088   0.0093   0.0091
+  0.0087   0.0092   0.0085   0.0092   0.0089   0.0087   0.0090   0.0085   0.0090   0.0089
+  0.0097   0.0091   0.0095   0.0087   0.0085   0.0089   0.0089   0.0091   0.0087   0.0091
+  0.0093   0.0086   0.0086   0.0089   0.0091   0.0084   0.0082   0.0092   0.0091   0.0093
+  0.0090   0.0091   0.0087   0.0087   0.0086   0.0091   0.0085   0.0088   0.0082   0.0086
+
+(C5) Minimal Interpretation : 
+-suggest stable optimization with limited to no late-stage gains
+
+
+WRITTEN OBSERVATION: 
+The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 400 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. 
+Overall, this behavior suggests that the depth-2 model converges stably but reaches diminishing returns relatively early in training.
+
+ACCURACY: 0.998
+
+
+
