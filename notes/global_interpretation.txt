@@ -1,0 +1,17 @@
+GLOBAL INTERPRETATION (INTERIM)
+Append-only timeline:
+This file records evolving interpretations and is not retroactively edited.
+
+Purpose: Track provisional interpretations and hypotheses during depth experiments.
+Status: Preliminary – subject to revision as more depths are evaluated.
+Observed pattern (so far):
+- As depth increases from 2 to 4, training loss tends to plateau earlier and exhibits increased oscillation.
+- This behavior is consistently observed under the same optimizer and learning rate.
+Working hypothesis:
+- Under a fixed learning rate and optimization setup, increasing depth amplifies optimization instability, which may contribute to earlier loss plateaus.
+Optimization vs capacity:
+- Given the simplicity of the circle dataset, representational capacity is unlikely to be the primary bottleneck.
+- The observed training behavior therefore suggests optimization-related constraints under the current regime.
+Interim conclusion (so far):
+- Increasing depth alone has not consistently improved training behavior under controlled conditions.
+- These interpretations are preliminary and will be revisited as deeper models are evaluated.
