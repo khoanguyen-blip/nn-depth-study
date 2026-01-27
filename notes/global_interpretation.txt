@@ -15,3 +15,12 @@ Optimization vs capacity:
 Interim conclusion (so far):
 - Increasing depth alone has not consistently improved training behavior under controlled conditions.
 - These interpretations are preliminary and will be revisited as deeper models are evaluated.
+
+Day 11 – Experimental Refinement and Robustness Control, experimenting with 6 hidden layers 
+1. Removal of Loss Curve Visualization
+Loss curve visualization (show_loss) was removed from the main training loop. While loss curves are useful for debugging and for gaining intuition about optimization behavior, plotting them for every run introduces unnecessary clutter and does not support fair comparison across runs or depths. Loss curves are therefore retained only as representative examples in separate cells.
+2. Addition of Training and Testing Accuracy
+Both training accuracy and testing accuracy were explicitly added as evaluation metrics. Relying solely on training accuracy can be misleading, particularly for deeper networks with higher expressive capacity. A separate test set is generated for each run to evaluate generalization performance alongside fitting ability.
+3. Multiple Runs and Mean Performance Reporting
+To reduce randomness and luck bias, each architecture is now trained and evaluated over 10 independent runs with different random seeds. For each depth, final performance is reported as the mean accuracy across runs rather than from a single execution. This provides a more reliable estimate of model behavior and ensures that observed trends are not driven by favorable random initialization or data sampling.
+
