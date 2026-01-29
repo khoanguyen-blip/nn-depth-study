@@ -1,0 +1,31 @@
+| Model Depth | C1: Global Trend | C2: Stability | C3: Plateau Phase | C4: Late-stage Gain | C5: Minimal Interpretation |
+| ----------- | ---------------- | ------------- | ----------------- | ------------------- | -------------------------- |
+| Rebaseline  |                  |               |                   |                     |                            |
+| Depth 2     |                  |               |                   |                     |                            |
+| Depth 4     |                  |               |                   |                     |                            |
+| Depth 6     |                  |               |                   |                     |                            |
+| Depth 8     |                  |               |                   |                     |                            |
+
+| Model Depth | Train Accuracy (mean ± std) | Test Accuracy (mean ± std) |
+| ----------- | --------------------------- | -------------------------- |
+| Rebaseline  |                             |                            |
+| Depth 2     |                             |                            |
+| Depth 4     |                             |                            |
+| Depth 6     |                             |                            |
+| Depth 8     |                             |                            |
+
+| Model Depth | Mean Gradient Norm | Gradient Norm Variance | Notable Behavior |
+| ----------- | ------------------ | ---------------------- | ---------------- |
+| Rebaseline  |                    |                        |                  |
+| Depth 2     |                    |                        |                  |
+| Depth 4     |                    |                        |                  |
+| Depth 6     |                    |                        |                  |
+| Depth 8     |                    |                        |                  |
+
+| Model Depth | Convergence Criterion | Epoch to Converge | Relative Speed |
+| ----------- | --------------------- | ----------------- | -------------- |
+| Rebaseline  |                       |                   |                |
+| Depth 2     |                       |                   |                |
+| Depth 4     |                       |                   |                |
+| Depth 6     |                       |                   |                |
+| Depth 8     |                       |                   |                |
