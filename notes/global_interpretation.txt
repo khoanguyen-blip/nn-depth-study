@@ -24,3 +24,5 @@ Both training accuracy and testing accuracy were explicitly added as evaluation 
 3. Multiple Runs and Mean Performance Reporting
 To reduce randomness and luck bias, each architecture is now trained and evaluated over 10 independent runs with different random seeds. For each depth, final performance is reported as the mean accuracy across runs rather than from a single execution. This provides a more reliable estimate of model behavior and ensures that observed trends are not driven by favorable random initialization or data sampling.
 
+Day14 - Circle dataset finalization and results noting clarification 
+-Early exploratory observations were consolidated into a standardized five-criterion framework (C1–C5). This refinement includes the addition of explicit gradient regime characterization and a variability metric (CV) derived from gradient norms. The finalized framework was fixed prior to result aggregation and used consistently across all depths.

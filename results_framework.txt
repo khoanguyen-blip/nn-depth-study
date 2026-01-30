@@ -14,18 +14,11 @@
 | Depth 6     |                             |                            |
 | Depth 8     |                             |                            |
 
-| Model Depth | Mean Gradient Norm | Gradient Norm Variance | Notable Behavior |
-| ----------- | ------------------ | ---------------------- | ---------------- |
-| Rebaseline  |                    |                        |                  |
-| Depth 2     |                    |                        |                  |
-| Depth 4     |                    |                        |                  |
-| Depth 6     |                    |                        |                  |
-| Depth 8     |                    |                        |                  |
+| Model Depth | Mean Gradient Norm | Gradient Norm Standard Deviation | Coefficient of Variation | Notable Behavior(Gradient regime) |
+| ----------- | ------------------ | -------------------------------- | ------------------------ | --------------------------------- |
+| Rebaseline  |                    |                                  |                          |                                   |
+| Depth 2     |                    |                                  |                          |                                   |
+| Depth 4     |                    |                                  |                          |                                   |
+| Depth 6     |                    |                                  |                          |                                   |
+| Depth 8     |                    |                                  |                          |                                   |
 
-| Model Depth | Convergence Criterion | Epoch to Converge | Relative Speed |
-| ----------- | --------------------- | ----------------- | -------------- |
-| Rebaseline  |                       |                   |                |
-| Depth 2     |                       |                   |                |
-| Depth 4     |                       |                   |                |
-| Depth 6     |                       |                   |                |
-| Depth 8     |                       |                   |                |

@@ -66,6 +66,10 @@ def training_norm(
 
 
 
+    
+
+
+        
 
         
         

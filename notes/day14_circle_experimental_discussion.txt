@@ -1,0 +1,30 @@
+Day14: __________Circle Classification Experimental Results__________
+
+Aspect 1/Loss behavior across depths
+-C1 – Global trend.
+All models exhibit a generally decreasing loss trend over the course of training, indicating that they are able to learn the underlying structure of the task. However, the deepest model (Depth 8) stands out as a clear exception, as its loss curve no longer maintains a smooth decreasing pattern and instead shows noticeably larger fluctuations.
+-C2 – Stability.
+As model depth increases, training stability consistently degrades. Under a controlled experimental setup with identical training conditions and number of epochs, shallower models achieve smoother loss curves, whereas deeper models continue to reduce loss but with increasing oscillations. Inspection of the loss curves suggests that Depth 2 achieves the highest stability, followed by a gradual decline in stability for Depth 4, Depth 6, and finally Depth 8. This trend broadly supports the initial hypothesis that increasing depth introduces greater optimization difficulty.
+-C3–C5 – Plateau phase and late-stage gains.
+Despite differences in training stability, all models display similar behavior in the later stages of training. Specifically, the loss curves enter a plateau phase after approximately 100 epochs, and no substantial improvement is observed beyond this point.
+-Summary.
+Overall, increasing model depth does not significantly alter the general convergence trend or the onset of the plateau phase. Instead, its primary effect is on optimization stability: deeper models continue to converge but exhibit increasingly volatile training dynamics, while shallower models achieve smoother and more stable optimization. 
+
+
+Aspect 2/Performance behavior with increasing depth
+-Training accuracy:
+Across increasing depths, training accuracy remains consistently high, with only minor fluctuations and no systematic improvement as depth increases. This saturation suggests that even shallow models are sufficient to fit the circle dataset, and additional depth primarily increases model capacity without yielding meaningful training performance gains. This observation is broadly consistent with the initial hypothesis that depth would not substantially improve performance on a simple, low-dimensional task.
+-Test accuracy:
+In contrast, test accuracy does not exhibit a monotonic trend with depth and instead fluctuates within a narrow range across models. Despite increased training capacity, deeper networks do not demonstrate improved generalization performance. This behavior partially contradicts the initial hypothesis that increased depth might enhance generalization, indicating that depth alone is insufficient to yield test accuracy gains under the current experimental setting.
+-Summary.
+Taken together, these results suggest that performance-related hypotheses remain inconclusive in this aspect, with depth showing limited influence on generalization despite consistently high training accuracy.
+
+
+Aspect 3/ Gradient Norm(computed across all layers) 
+-Mean & Std :
+As network depth increases, both the mean and standard deviation of gradient norms increase in a coordinated manner. This trend suggests partial consistency with the initial hypothesis regarding increased optimization difficulty in deeper models, and aligns with the increasingly oscillatory loss behavior observed across depths (C1–C5).
+
+-Coefficient of variation and gradient regime:
+Similarly, the coefficient of variation increases monotonically with depth, reflecting a rise in relative gradient variability and reduced optimization stability in deeper architectures. While gradient norm dynamics broadly mirror the loss behavior, their variability is more pronounced, making instability patterns more explicit compared to loss curves.
+
+DISCUSSION WRAP-UP:Overall, these findings indicate that increasing depth primarily affects optimization stability rather than convergence or performance, highlighting the limited practical benefit of deeper architectures for simple nonlinear classification tasks under controlled settings.

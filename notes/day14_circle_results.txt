@@ -1,0 +1,26 @@
+Day 14: Circle classification comparing results
+I/depth vs loss behavior
+| Model Depth | C1: Global Trend | C2: Stability | C3: Plateau Phase | C4: Late-stage Gain | C5: Minimal Interpretation |
+| ----------- | ---------------- | ------------- | ----------------- | ------------------- | -------------------------- |
+| Rebaseline  |  smooth decreasing trend |   relatively stable    |  ~100 epochs  |diminishing improvement |  late-stage flattening     |
+| Depth 2     |  smooth decreasing trend |   relatively stable    |  ~100 epochs  |diminishing improvement |  late-stage flattening     |
+| Depth 4     |  smooth decreasing trend |slight and observable oscillations   |  ~100 epochs  |diminishing improvement |  increased oscillations and limited late-stage gains   |
+| Depth 6     |  smooth decreasing trend |pronounced oscillations with some occasional spikes|  ~100 epochs  |limited late-stage gains after plateau phase |no notable dynamics|
+| Depth 8     |     decreasing trend     |  regular oscillations with frequent spikes |  ~100 epochs  |no meaningful late-stage gains are observed|   No additional benefits beyond the plateau phase  |
+
+II/depth vs performance
+| Model Depth | Train Accuracy (mean ± std) | Test Accuracy (mean ± std) |
+| Rebaseline  |       0.9964 ± 0.0012       |      0.9933 ± 0.0035       |
+| Depth 2     |       0.9982 ± 0.0019       |      0.9938 ± 0.0030       |
+| Depth 4     |       0.9981 ± 0.0013       |      0.9933 ± 0.0047       |
+| Depth 6     |       0.9989 ± 0.0010       |      0.9928 ± 0.0038       |
+| Depth 8     |       0.9981 ± 0.0012       |      0.9935 ± 0.0044       |
+
+III/depth vs gradient norm
+| Model Depth | Mean Gradient Norm | Gradient Norm Std | Coefficient of Variation | Notable Behavior (Gradient Regime) |
+|------------|--------------------|-------------------|--------------------------|-------------------------------------|
+| Rebaseline | 2.526392599739542  | 0.40771973746286655 | 0.16138415601157965 | Mild oscillations with low variance    |
+| Depth 2    | 4.067540827364371  | 0.3210284126511252  | 0.07892444754122868 | Stable regime with smooth decay        |
+| Depth 4    | 9.54204166922318   | 2.225290283763605   | 0.233209030195397   | High-variance, oscillatory but decaying|
+| Depth 6    | 10.179578529025708 | 3.3072766145042625  | 0.3248932757946712  | Unstable regime with frequent spikes   |
+| Depth 8    | 9.817389251751937  | 4.075285861110034   | 0.41510892118113674 | Highly noisy gradient regime           |
