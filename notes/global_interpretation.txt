@@ -18,7 +18,7 @@ Interim conclusion (so far):
 
 Day 11 – Experimental Refinement and Robustness Control, experimenting with 6 hidden layers 
 1. Removal of Loss Curve Visualization
-Loss curve visualization (show_loss) was removed from the main training loop. While loss curves are useful for debugging and for gaining intuition about optimization behavior, plotting them for every run introduces unnecessary clutter and does not support fair comparison across runs or depths. Loss curves are therefore retained only as representative examples in separate cells.
+Printing loss (show_loss) was removed from the main training loop. While printing loss every 50 epochs are useful for debugging and for gaining intuition about optimization behavior, doing so for every run introduces unnecessary clutter and does not support fair comparison across runs or depths. printing loss per 50 epochs is therefore retained only as representative examples in separate cells.
 2. Addition of Training and Testing Accuracy
 Both training accuracy and testing accuracy were explicitly added as evaluation metrics. Relying solely on training accuracy can be misleading, particularly for deeper networks with higher expressive capacity. A separate test set is generated for each run to evaluate generalization performance alongside fitting ability.
 3. Multiple Runs and Mean Performance Reporting

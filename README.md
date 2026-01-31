@@ -19,3 +19,20 @@ Increasing depth will improve performance on non-linear datasets up to a certain
 - Fully connected neural networks
 - Implemented from scratch (no PyTorch / TensorFlow)
 - Fixed dataset and training procedure
+
+
+## Architectural Decisions (across two datasets) 
+-ReLU is used in the hidden layers due to its constant derivative in the active region, which allows gradients to propagate more effectively through multiple layers compared to saturating activations such as sigmoid or tanh.
+This choice mitigates vanishing gradient effects and enables the study of increased network depth without introducing additional optimization difficulties unrelated to representational capacity.
+A sigmoid activation is applied at the output layer to constrain predictions to the [0,1]
+[0,1] range, making them interpretable as class probabilities and naturally compatible with binary cross-entropy loss.
+-Dataset 1 (Simple Circle)
+Role: Sanity Check
+In Dataset 1, the role of ReLU is primarily to serve as a sanity check for the network architecture.
+The circular decision boundary can be approximated with a small number of linear partitions, allowing a shallow ReLU network to capture the underlying structure without requiring deep compositional representations.
+In this setting, ReLU provides the minimal non-linearity needed to form a closed boundary around the circle, verifying that the implementation and training dynamics behave as expected. 
+
+-Dataset 2 (Nested Rings)
+Role: Stress Test
+Dataset 2 is designed as a stress test in that it places increased representational demands on the network.
+The nested ring structure requires the coordination of multiple linear partitions, providing a structured setting to examine how classification performance and gradient behavior vary as network depth increases.
