@@ -1,0 +1,43 @@
+Day 16 - Baseline Nestedrings Classification 
+Loss observation : 
+(C1) Global Trend : 
+-Slow but consistent decrease 
+(C2) Stability : 
+-Mostly stable with slight oscillations
+(C3) Plateau Phase: 
+-No clear plateau observed; convergence slows significantly after ~400 epochs
+(C4) Late-stage gain: 
+-Continued minor improvement throughout late training stages
+
+
+RAW LOST SAMPLES(LAST 100 EPOCHS): 
+(THESE SAMPLES ARE REPRESENTATIVE)
+0.1437   0.1436   0.1452   0.1431   0.1437   0.1423   0.1447   0.1448   0.1438   0.1428
+  0.1434   0.1431   0.1417   0.1439   0.1426   0.1425   0.1428   0.1432   0.1416   0.1418
+  0.1409   0.1422   0.1416   0.1411   0.1410   0.1418   0.1417   0.1418   0.1421   0.1404
+  0.1429   0.1418   0.1416   0.1401   0.1421   0.1421   0.1408   0.1400   0.1402   0.1415
+  0.1398   0.1400   0.1397   0.1406   0.1395   0.1422   0.1390   0.1397   0.1400   0.1394
+  0.1386   0.1402   0.1380   0.1392   0.1398   0.1385   0.1398   0.1392   0.1398   0.1383
+  0.1373   0.1392   0.1382   0.1398   0.1381   0.1373   0.1388   0.1377   0.1368   0.1372
+  0.1373   0.1368   0.1385   0.1370   0.1365   0.1385   0.1350   0.1382   0.1360   0.1380
+  0.1367   0.1362   0.1365   0.1373   0.1379   0.1366   0.1367   0.1369   0.1369   0.1370
+  0.1356   0.1362   0.1350   0.1368   0.1369   0.1373   0.1371   0.1356   0.1361   0.1354
+(C5) Minimal Interpretation : 
+-Exhibits small, continuous gains in the late-state even though converging process slowed down
+
+WRITTEN OBSERVATION:
+The training loss curve shows a consistent decreasing trend with minute oscillations throughout training. Contrary to the expected curvature during the early phase (from epoch 0 to approximately epoch 200), the loss decreases gradually rather than rapidly. The convergence process slows noticeably after around 400 epochs, with no clear plateau observed even in the final training stages. Minor but continuous improvements persist until the end of training. Overall, this behavior suggests the increased geometric complexity of Nested Rings shifts the learning dynamics from 'rapid convergence' to a 'persistent refinement' process.
+
+TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9658 ± 0.0089
+TEST  ACCURACY(MEAN OF 10 RUNS): 0.9563 ± 0.0150
+
+(THESE FOLLOWING METRICS ARE ADOPTED TO SUIT dataset1_reflection_dataset2_protocol.md)
+
+Gradient Norm observation : 
+AVG GRADIENT NORM:  14.486515248474717
+GRADIENT NORM STANDARD DEVIATION:  0.7935083280157993
+COEFFICIENT OF VARIATION : 0.05477565269531247
+NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : gradient norms remain within a narrow range(approximately 14-15) with regular spikes and a mild increasing trend over training
+
+
+
