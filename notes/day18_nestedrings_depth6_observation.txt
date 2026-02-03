@@ -1,0 +1,38 @@
+Day 18 - Depth6 Nestedrings Classification 
+Loss observation : 
+(C1) Global Trend : 
+-An overall decreasing trend with high steepness in the early stage
+(C2) Stability : 
+-Display relatively stable behavior with mild and ocassional spikes ,predominantly concentrated in the early stage of training.
+(C3) Plateau Phase: 
+- Enter an effective plateaue phase after approximately 100 epochs, with only marginal improvements afterward
+(C4) Late-stage gain: 
+-No valuable late-stage loss improvements were perceived 
+
+
+
+RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate within a confined range relative to earlier training stages , with ocassional spikes observed
+(THESE SAMPLES ARE REPRESENTATIVE)
+0.0287   0.0490   0.0367   0.0558   0.0264   0.0350   0.0309   0.0238   0.0308   0.0368
+  0.0317   0.0290   0.0380   0.0341   0.0297   0.0548   0.0315   0.0348   0.0269   0.0365
+  0.0345   0.0327   0.0305   0.0440   0.0291   0.0319   0.0355   0.0452   0.0342   0.0287
+  0.0253   0.0574   0.0296   0.0364   0.0268   0.0253   0.0448   0.0377   0.0362   0.0259
+  0.0341   0.0276   0.0297   0.0344   0.0407   0.0361   0.0307   0.0259   0.0335   0.0393
+  0.0261   0.0382   0.0311   0.0355   0.0530   0.0274   0.0422   0.0473   0.0333   0.0323
+  0.0281   0.0337   0.0261   0.0413   0.0305   0.0333   0.0281   0.0320   0.0288   0.0474
+  0.0319   0.0448   0.0384   0.0356   0.0359   0.0287   0.0360   0.0299   0.0299   0.0373
+  0.0335   0.0334   0.0395   0.0252   0.0301   0.0486   0.0253   0.0448   0.0251   0.0388
+  0.0263   0.0330   0.0305   0.0266   0.0397   0.0359   0.0508   0.0289   0.0264   0.0419
+(C5) Minimal Interpretation : 
+-suggest a stable optimization with limited late-stage gains. Despite exhibitting a less smooth losscurve trajectory than depth2 and baseline models, the depth6 model shows a smoother curvature than depth4 model's.
+WRITTEN OBSERVATION:
+-The depth-6 model exhibits a clear and stable decreasing loss trend, characterized by a steep early-stage decline followed by mild oscillations throughout training. Most fluctuations are concentrated within the first 200 epochs, after which the loss enters an effective plateau. While minor variations persist, no meaningful late-stage loss improvements are observed.
+-Overall, although the depth-6 loss curve appears more fluctuating than shallower models (baseline and depth-2), it achieves lower final loss values and demonstrates a smoother curvature compared to the depth-4 model, suggesting stable optimization but diminishing returns from increased depth.
+TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9882 ± 0.0070
+TEST  ACCURACY(MEAN OF 10 RUNS):0.9772 ± 0.0103
+
+Gradient Norm observation : 
+AVG GRADIENT NORM:  27.945145645852246
+GRADIENT NORM STANDARD DEVIATION:  4.520771866660445
+COEFFICIENT OF VARIATION:  0.16177306513095377
+NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : display fluctuations within a restricted range (~13 to ~45) with no strong monotonic trend, indicating stable gradient flow despite increased variance. The coefficient of variation lies between those observed in the depth-2 and depth-4 models, no evidence of severe instability,divergence, or exploding/vanishing in gradnorm behavior .

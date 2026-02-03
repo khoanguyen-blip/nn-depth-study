@@ -1,0 +1,41 @@
+Day 18 - Depth8 Nestedrings Classification 
+Loss observation : 
+(C1) Global Trend : 
+-Exhibits an overall decreasing trend. 
+(C2) Stability : 
+-Despite having the most layers among the models reran the experiments on, depth8 model is notably stable given increased depth with mild spikes spread evenly across all stages
+(C3) Plateau Phase: 
+- A plateau-like phase is observed after approximately 100 epochs
+(C4) Late-stage gain: 
+-Diminishing late-stage improvement is noticed, consistent with the behavior seen in shallower models.
+
+
+
+
+RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples vary within a bounded and relatively similar range compare to shallower network models
+(THESE SAMPLES ARE REPRESENTATIVE)
+0.0420   0.0324   0.0331   0.0437   0.0399   0.0329   0.0401   0.0455   0.0358   0.0271
+  0.0283   0.0478   0.0270   0.0361   0.0300   0.0373   0.0358   0.0331   0.0261   0.0347
+  0.0389   0.0435   0.0281   0.0268   0.0264   0.0331   0.0360   0.0361   0.0535   0.0281
+  0.0359   0.0341   0.0455   0.0355   0.0330   0.0259   0.0330   0.0523   0.0304   0.0340
+  0.0293   0.0305   0.0321   0.0253   0.0480   0.0287   0.0308   0.0337   0.0393   0.0375
+  0.0277   0.0406   0.0279   0.0205   0.0374   0.0278   0.0386   0.0372   0.0318   0.0311
+  0.0368   0.0251   0.0346   0.0444   0.0420   0.0323   0.0333   0.0399   0.0439   0.0321
+  0.0334   0.0249   0.0361   0.0253   0.0351   0.0341   0.0268   0.0414   0.0335   0.0333
+  0.0419   0.0348   0.0387   0.0320   0.0262   0.0335   0.0389   0.0521   0.0263   0.0377
+  0.0262   0.0269   0.0291   0.0360   0.0399   0.0331   0.0289   0.0405   0.0334   0.0385
+(C5) Minimal Interpretation : 
+-the loss shows no considerable features beyond approximately 100 epochs, no late-state gains are obtained. Under the fixed learning rate and training regime, increasing depth beyond six layers does not yield further optimization or generalization benefits on the nested rings task.
+
+WRITTEN OBSERVATION:
+-Displays a common decreasing trend and maintain a high stability with mild spikes. After about 100 epochs, the models displayed a plateau-like behavior with limited late-stage gains. Compared to depth-6, this behavior indicates diminishing returns rather than optimization difficulty.
+- Despite being the most complex models , it does not struggle in optimizing with the restricted condition (lr =0.001 and 1000 epochs) and shows relatively similar behavior to other models(depth2, depth4, depth6) except the baseline models evaluated on the nested rings classification task.
+TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9849 ± 0.0049
+TEST  ACCURACY(MEAN OF 10 RUNS):0.9732 ± 0.0043
+
+
+Gradient Norm observation : 
+AVG GRADIENT NORM:  27.884691350961372
+GRADIENT NORM STANDARD DEVIATION:  4.429147543650532
+COEFFICIENT OF VARIATION:  0.15883796194494473
+NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : fluctuating within a controlled range (~13 to ~47) with no strong monotonic trend, shows an notably gradient behavior similar to depth6 model. Controlled Coefficient of variation provides evidence suggesting stable gradient propagation, with no indication of severe vanishing or exploding gradient behavior.
