@@ -1,0 +1,25 @@
+| Model Depth | C1: Global Trend | C2: Stability | C3: Plateau Phase | C4: Late-stage Gain | C5: Minimal Interpretation |
+| ----------- | ---------------- | ------------- | ----------------- | ------------------- | -------------------------- |
+| Baseline    |decreasing slowly and consistently|stable with very slight oscillations|no clear plateau observed but convergence slowed down after ~400 epochs|Exhibits small, continuous gains|
+| Depth 2     |decreasing smoothly but especially steep in the early-stage|stable with minor oscillations|~100 epochs|decaying improvement despite continued optimization|stable optimization|
+| Depth 4     |decreasing smoothly but especially steep in the early-stage|observable oscillations with ocassional spikes|~100 epochs|Decaying improvement with no notable late-stage features|stable optimization|
+| Depth 6     |Overall decreasing with high steepness in early-stage|relatively stable behavior with mild and occasional spikes|~100 epochs|no valuable late-stage loss improvements were recognized|stable optimization with limited late-stage gains|
+| Depth 8     |Overall decreasing with high steepness in early-stage|notably stable|~100 epochs|diminishing improvement|suggests limited additional benefit from further depth|
+
+
+| Model Depth | Train Accuracy (mean ± std) | Test Accuracy (mean ± std) |
+| ----------- | --------------------------- | -------------------------- |
+| Baseline    |       0.9658 ± 0.0089       |       0.9563 ± 0.0150      |
+| Depth 2     |       0.9905 ± 0.0032       |       0.9788 ± 0.0072      |
+| Depth 4     |       0.9882 ± 0.0041       |       0.9797 ± 0.0051      |
+| Depth 6     |       0.9882 ± 0.0070       |       0.9772 ± 0.0103      |
+| Depth 8     |       0.9849 ± 0.0049       |       0.9732 ± 0.0043      |
+
+| Model Depth | Mean Gradient Norm | Gradient Norm Standard Deviation | Coefficient of Variation |         Notable Behavior(Gradient regime)       |
+| ----------- | ------------------ | -------------------------------- | ------------------------ | ----------------------------------------------- |
+| Baseline    | 14.486515248474717 |        0.7935083280157993        |    0.05477565269531247   | highly fluctuating with an increasing trend     |
+| Depth 2     | 25.675921537012673 |        3.1488650420964497        |    0.1226388325559127    |highly fluctuating with no strong monotonic trend|
+| Depth 4     | 26.176212221057025 |        5.05907983699901          |    0.19327012610821195   |highly fluctuating with a mild decreasing trend  |
+| Depth 6     | 27.945145645852246 |        4.520771866660445         |    0.16177306513095377   |highly fluctuating with no strong monotonic trend|
+| Depth 8     | 27.884691350961372 |        4.429147543650532         |    0.15883796194494473   |highly fluctuating with no strong monotonic trend|
+

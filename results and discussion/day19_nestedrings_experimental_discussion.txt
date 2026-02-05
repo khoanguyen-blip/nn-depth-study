@@ -1,0 +1,38 @@
+Day19: __________NestedRings Classification Experimental Results__________
+
+Aspect 1/Loss behavior across depths
+-C1 – Global trend.
+Across all model depths, the training loss exhibits a clear overall decreasing trend, indicating successful optimization under the same training configuration.
+The baseline model shows a slow but consistent reduction in loss throughout training, while deeper models (Depth 2 to Depth 8) demonstrate a much steeper initial decline, particularly within the first 50–100 epochs. This suggests that increased depth substantially improves early-stage representational capacity for the Nested Rings classification task.
+-C2 – Stability.
+In terms of stability, the baseline model maintains a relatively smooth trajectory with only minor oscillations.
+As depth increases, small fluctuations and occasional spikes become more visible, especially in Depth 4 and Depth 6 models. However, these oscillations remain bounded and do not lead to divergence. Notably, the Depth 8 model exhibits surprisingly stable behavior despite having the greatest depth, with mild spikes evenly distributed across training stages, indicating that increased depth does not necessarily induce instability in this setting.
+-C3 - Plateau phase.
+A clear depth-dependent plateau behavior is observed.
+The baseline model does not exhibit a sharply defined plateau but instead shows a gradual slowdown in convergence after approximately 400 epochs. In contrast, deeper models (Depth ≥ 2) enter an effective plateau phase much earlier, typically around 100 epochs, where the rate of loss reduction significantly decreases. This earlier plateau suggests that deeper networks rapidly extract the dominant structure of the dataset but offer diminishing returns afterward.
+-C4 - Late-stage Gain
+Late-stage improvements differ noticeably across depths.
+The baseline model continues to achieve minor but persistent gains throughout later epochs. For Depth 2, small decaying improvements remain observable despite the plateau. However, for Depth 4, Depth 6, and Depth 8 models, late-stage loss reductions become marginal, with no meaningful gains or anomalous behaviors detected. This indicates that additional training beyond the plateau yields limited optimization benefits for deeper architectures.
+
+-Summary.
+Overall, increasing depth accelerates early convergence and lowers final loss more rapidly, but also leads to earlier saturation in optimization progress. While deeper models do not exhibit catastrophic instability, their training dynamics suggest a trade-off: faster learning in early stages versus reduced late-stage flexibility. These results highlight that, for the Nested Rings task, depth primarily enhances early representational efficiency rather than sustained long-term optimization.
+
+
+Aspect 2/Performance behavior with increasing depth
+-Training accuracy:
+Training accuracy improved substantially from the baseline to depth 2 and remained high for deeper models. However, beyond moderate depth, training accuracy saturated and exhibited slight fluctuations rather than consistent gains.
+-Test accuracy:
+Test accuracy followed a similar pattern: a clear improvement from the baseline to depth 2–4, followed by stabilization and a mild decline for deeper models (depth ≥ 6). No deeper configuration consistently outperformed moderate-depth models.
+
+-Summary.
+Performance gains from increased depth were most pronounced at shallow-to-moderate depths. Beyond this range, accuracy improvements saturated, and additional depth did not translate into superior generalization on the nested rings dataset.
+
+
+Aspect 3/ Gradient Norm(computed across all layers) 
+-Mean & Std :
+The mean gradient norm increased with depth, indicating stronger gradient magnitudes in deeper networks. At the same time, the standard deviation also increased, reflecting greater variability in gradient updates as depth grew.
+
+-Coefficient of variation and gradient regime:
+The coefficient of variation rose noticeably up to depth 4 and then stabilized for deeper models. Across all depths, gradient norms remained highly fluctuating without exhibiting a clear monotonic collapse or explosion, suggesting that optimization difficulty manifested as variability rather than gradient failure.
+
+DISCUSSION WRAP-UP: Overall, the results show that increasing depth does bring real optimization and performance benefits for the Nested Rings task, but only up to a certain point. Compared to the baseline, moderately deep models converge faster in the early stage and achieve higher training and test accuracy, indicating that added depth helps the network capture the more complex nonlinear structure of the data. However, as depth continues to increase, these gains gradually saturate. Deeper models tend to enter a plateau earlier, exhibit diminishing late-stage improvements, and show higher gradient variability without clear improvements in generalization. Taken together, depth is beneficial for Nested Rings when used moderately, but excessive depth mainly increases optimization complexity rather than providing meaningful additional gains.

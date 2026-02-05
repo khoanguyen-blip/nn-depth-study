@@ -38,5 +38,5 @@ Gradient Norm observation :
 AVG GRADIENT NORM:  25.675921537012673
 GRADIENT NORM STANDARD DEVIATION:  3.1488650420964497
 COEFFICIENT OF VARIATION:  0.1226388325559127 
-NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : the gradient norms fluctuate within a determined range from ~17.5(min) to ~37.5(max), showing  .The relatively low coefficient of variation (≈0.12) suggests that gradient magnitudes remain well-regulated throughout training, indicating stable backpropagation behavior for the depth-2 network.
+NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : the gradient norms fluctuate within a determined range from ~17.5(min) to ~37.5(max), showing no strong monotonic trend  .The relatively low coefficient of variation (≈0.12) suggests that gradient magnitudes remain well-regulated throughout training, indicating stable backpropagation behavior for the depth-2 network.
 

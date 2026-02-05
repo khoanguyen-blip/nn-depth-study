@@ -5,7 +5,7 @@ Aspect 1/Loss behavior across depths
 All models exhibit a generally decreasing loss trend over the course of training, indicating that they are able to learn the underlying structure of the task. However, the deepest model (Depth 8) stands out as a clear exception, as its loss curve no longer maintains a smooth decreasing pattern and instead shows noticeably larger fluctuations.
 -C2 – Stability.
 As model depth increases, training stability consistently degrades. Under a controlled experimental setup with identical training conditions and number of epochs, shallower models achieve smoother loss curves, whereas deeper models continue to reduce loss but with increasing oscillations. Inspection of the loss curves suggests that Depth 2 achieves the highest stability, followed by a gradual decline in stability for Depth 4, Depth 6, and finally Depth 8. This trend broadly supports the initial hypothesis that increasing depth introduces greater optimization difficulty.
--C3–C5 – Plateau phase and late-stage gains.
+-C3–C4 – Plateau phase, late-stage gains.
 Despite differences in training stability, all models display similar behavior in the later stages of training. Specifically, the loss curves enter a plateau phase after approximately 100 epochs, and no substantial improvement is observed beyond this point.
 -Summary.
 Overall, increasing model depth does not significantly alter the general convergence trend or the onset of the plateau phase. Instead, its primary effect is on optimization stability: deeper models continue to converge but exhibit increasingly volatile training dynamics, while shallower models achieve smoother and more stable optimization. 
