@@ -1,7 +1,14 @@
 # nn-depth-study
 Studying the effect of neural network depth using NumPy
 # Neural Network Depth Study (NumPy)
-
+## Fixed Variables 
+To isolate the effect of network depth, the following variables were kept constant across all experiments 
+    1/dataset generation logic and data distribution
+    2/training procedure(train_loop.py, optimizer type, learning rate, batch size, number of epochs)
+    3/loss function
+    4/activation function 
+    5/weight initialization method
+    6/random seed
 ## Introduction
 This project explores how the number of hidden layers affects the learning ability of a simple neural network implemented from scratch using NumPy.
 
