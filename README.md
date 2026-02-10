@@ -1,45 +1,40 @@
-# nn-depth-study
-Studying the effect of neural network depth using NumPy
-# Neural Network Depth Study (NumPy)
-## Fixed Variables 
-To isolate the effect of network depth, the following variables were kept constant across all experiments 
-    1/dataset generation logic and data distribution
-    2/training procedure(train_loop.py, optimizer type, learning rate, batch size, number of epochs)
-    3/loss function
-    4/activation function 
-    5/weight initialization method
-    6/random seed
+### NN-DEPTH-STUDY
+This is an observational study focused on optimization dynamics rather than benchmark performance.
+
+## A Small Observational Study on Neural Network Depth (NumPy)
+This project investigates how neural network depth influences learning behavior under controlled experimental conditions.
+Rather than optimizing for performance, the study focuses on loss dynamics, gradient behavior, and training stability as depth increases.
+All neural networks in this project are implemented entirely from scratch using NumPy, without relying on any deep learning frameworks.
+
+## Controlled Setup (Fixed Variables)
+To isolate the effect of network depth, the following variables were kept constant across all experiments:
+- Dataset generation logic and data distribution
+- Training procedure (train_loop.py, optimizer type, learning rate, batch size, number of epochs)
+- Loss function (Binary Cross-Entropy)
+- Activation functions
+- Weight initialization strategy
+- Random seed
+Network depth is the only variable intentionally modified.
+
 ## Introduction
-This project explores how the number of hidden layers affects the learning ability of a simple neural network implemented from scratch using NumPy.
+This project explores how the number of hidden layers affects the learning behavior of a simple fully connected neural network implemented from scratch using NumPy.
+Instead of assuming that deeper models are inherently better, the study aims to observe how depth influences learning dynamics when all other factors are controlled.
 
 ## Research Question
-How does increasing the number of hidden layers impact model accuracy and learning behavior when trained on the same dataset?
+How does increasing network depth affect learning behavior — including loss dynamics, gradient norms, and training stability — under controlled conditions?
+Rather than interpreting “better” solely in terms of accuracy, this study examines multiple learning-related signals to provide a broader view of depth-related effects.
 
 ## Initial Hypothesis
-Increasing depth will improve performance on non-linear datasets up to a certain point, after which training becomes less stable or inefficient.
+Increasing network depth improves learning behavior only within a limited range.
+Beyond that range, additional depth may introduce unnecessary optimization complexity, leading to increased instability and diminishing performance gains.
 
 ## Fairness in Depth Comparison
--The original goal of this research is to study the effect of network depth on prediction performance and training loss. However, during experimentation, the dead ReLU phenomenon emerged, causing models with greater depth than the baseline to stop learning entirely. As a result, the study no longer reflects the impact of depth itself, but instead becomes an investigation of which depths can survive the activation behavior.
--Therefore, an adjustment is necessary to realign the methodology with the original research goal and to produce a fair and unbiased comparison across different depths.
--Learning rate is an important factor alongside activation functions. Using an excessively large learning rate can bias the experimental results, as a learning rate of 0.1 is only suitable for shallow networks. Therefore, redesigning the baseline is necessary to ensure that the study accurately reflects the effect of network depth.
-## Scope
-- Fully connected neural networks
-- Implemented from scratch (no PyTorch / TensorFlow)
-- Fixed dataset and training procedure
+During early experimentation, the dead ReLU phenomenon emerged in deeper models, causing training to stall completely.
+If left unaddressed, this issue would shift the study away from depth analysis and toward survivability under activation behavior.
+To preserve fairness and experimental integrity:
 
+- The learning rate was reduced from 0.1 to 0.001, as higher values disproportionately destabilized deeper models
+- He initialization was adopted to improve gradient flow through ReLU layers
+- Affected experiments were restarted to maintain consistency across depths
 
-## Architectural Decisions (across two datasets) 
--ReLU is used in the hidden layers due to its constant derivative in the active region, which allows gradients to propagate more effectively through multiple layers compared to saturating activations such as sigmoid or tanh.
-This choice mitigates vanishing gradient effects and enables the study of increased network depth without introducing additional optimization difficulties unrelated to representational capacity.
-A sigmoid activation is applied at the output layer to constrain predictions to the [0,1]
-[0,1] range, making them interpretable as class probabilities and naturally compatible with binary cross-entropy loss.
--Dataset 1 (Simple Circle)
-Role: Sanity Check
-In Dataset 1, the role of ReLU is primarily to serve as a sanity check for the network architecture.
-The circular decision boundary can be approximated with a small number of linear partitions, allowing a shallow ReLU network to capture the underlying structure without requiring deep compositional representations.
-In this setting, ReLU provides the minimal non-linearity needed to form a closed boundary around the circle, verifying that the implementation and training dynamics behave as expected. 
-
--Dataset 2 (Nested Rings)
-Role: Stress Test
-Dataset 2 is designed as a stress test in that it places increased representational demands on the network.
-The nested ring structure requires the coordination of multiple linear partitions, providing a structured setting to examine how classification performance and gradient behavior vary as network depth increases.
+These adjustments were applied consistently across all experiments and are documented transparently to preserve experimental integrity.
