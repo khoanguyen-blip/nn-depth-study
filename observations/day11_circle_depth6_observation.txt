@@ -3,15 +3,15 @@ Loss observation :
 (C1) Global Trend : 
 -Smooth decrease
 (C2) Stability : 
--Stable overall, but with increased oscillations compared to shallower depths.
-This is likely due to the higher optimization cost introduced by increased network depth under a fixed training budget.
+-Stable overall, but with increased oscillations compared to shallower models.
+This may be related to the increased optimization complexity introduced by increased depth under a fixed training budget.
 (C3) Plateau Phase: 
 -A plateau-like behavior is observed after approximately 100 epochs.
-(C4) Late-stage gain: 
+(C4) Late-stage gains: 
 -Diminishing improvement
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a bounded but noticeably wider range ,with occasional spikes
+RAW LOSS SAMPLES(LAST 100 EPOCHS): loss samples fluctuate within a bounded but noticeably wider range, with occasional spikes
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.0041   0.0146   0.0188   0.0051   0.0071   0.0112   0.0042   0.0055   0.0090   0.0064
   0.0068   0.0058   0.0059   0.0083   0.0064   0.0049   0.0076   0.0078   0.0083   0.0072
@@ -24,13 +24,13 @@ RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a
   0.0052   0.0081   0.0097   0.0088   0.0172   0.0171   0.0044   0.0147   0.0045   0.0107
   0.0072   0.0095   0.0069   0.0055   0.0050   0.0054   0.0076   0.0042   0.0073   0.0075
 (C5) Minimal Interpretation : 
--Similar to depth 4, the loss shows no notable dynamics beyond approximately 100 epochs, and no late-stage gains are observed.
+-Similar to depth-4, the loss shows no significant change beyond approximately 100 epochs, with no clear late-stage gains observed.
 
 
 WRITTEN OBSERVATION: 
-Despite increased depth, the depth-6 model does not exhibit improved late-stage optimization compared to depth-4 under the same training budget.
+Despite increased depth, the depth-6 model does not exhibit improved late-stage optimization compared to the depth-4 model under the same training budget.
 This suggests that increasing depth alone does not guarantee additional optimization benefits in this setting.
-Overall, this behavior suggests that the depth-6 model converges stably exhibiting relatively similar behavior to depth-4 model.
+Overall, the depth-6 model converges stably and exhibits behavior broadly similar to the depth-4 model.
 
 
 

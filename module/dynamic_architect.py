@@ -1,9 +1,18 @@
-from layers import Linear 
-from activations import ReLU, Sigmoid
+from module.layers import Linear 
+from module.activations import ReLU, Sigmoid
 class Neural_Network:
     def __init__(self,layer_sizes):
-        #layer_sizes sẽ là một tập các số hướng dẫn cách build các layers
-        #nhớ : mọi layers trừ output đều có activation là ReLU , output có Sigmoid 
+        """
+        Fully connected neural network built dynamically from a list of layer sizes.
+    
+        Parameters
+        ----------
+        layer_sizes : list of int
+            Example: [2, 16, 16, 1]
+            Creates Linear layers between consecutive sizes.
+            ReLU is applied to all hidden layers.
+            Sigmoid is applied to the output layer.
+        """
         self.layers = []
 
         for i in range(len(layer_sizes) -1):

@@ -5,12 +5,12 @@ Loss observation :
 (C2) Stability : 
 -Stable with slight oscillations
 (C3) Plateau Phase: 
--After approximately 400 epochs it exhibitted a plateau-like behavior
+-After approximately 100 epochs it exhibited a plateau-like behavior
 (C4) Late-stage gain: 
--Diminishing improvement
+-Gradual reduction in improvement magnitude
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a very narrow range
+RAW LOSS SAMPLES(LAST 100 EPOCHS): loss samples fluctuate within a very narrow range
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.0101   0.0095   0.0102   0.0091   0.0094   0.0100   0.0093   0.0094   0.0089   0.0094
   0.0092   0.0090   0.0098   0.0094   0.0091   0.0090   0.0086   0.0091   0.0092   0.0104
@@ -24,12 +24,11 @@ RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a
   0.0090   0.0091   0.0087   0.0087   0.0086   0.0091   0.0085   0.0088   0.0082   0.0086
 
 (C5) Minimal Interpretation : 
--suggest stable optimization with limited to no late-stage gains
-
+-suggests stable optimization with minimal late-stage gains
 
 WRITTEN OBSERVATION: 
-The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 400 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. 
-Overall, this behavior suggests that the depth-2 model converges stably but reaches diminishing returns relatively early in training.
+The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 100 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. 
+Overall, this behavior suggests that the depth-2 model converges stably but reaches a slower improvement phase during later training
 
 ACCURACY(TRAINING, SINGLE RUN): 0.998
 
@@ -40,7 +39,7 @@ TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9982 ± 0.0019
 TEST  ACCURACY(MEAN OF 10 RUNS): 0.9938 ± 0.0030
 
 CONTEXT UPDATE(APPLICABLE TO PREVIOUS DAYS):
-As of Day 11, model performance for this depth is evaluated using both training accuracy and testing accuracy, averaged across 10 independent runs with different random seeds. This update addresses potential luck bias present in earlier single-run evaluations.
+As of Day 11, model performance for this depth is evaluated using both training accuracy and testing accuracy, averaged across 10 independent runs with different random seeds. This update reduces variance associated with single-seed evaluation.
 The displayed loss curve is taken from a representative single run (fixed seed) and serves to characterize the typical training dynamics for this depth.
 
 

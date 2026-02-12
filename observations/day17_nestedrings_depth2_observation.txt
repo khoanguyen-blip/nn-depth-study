@@ -5,13 +5,13 @@ Loss observation :
 (C2) Stability : 
 -Stabilized with minor oscillations
 (C3) Plateau Phase: 
--Enter the plateau phase after approximately 100 epochs, where the rate of loss reduction significantly slows.
-(C4) Late-stage gain: 
+-Enters the plateau phase after approximately 100 epochs, where the rate of loss reduction significantly slows.
+(C4) Late-stage gains: 
 -Decaying improvement despite continued optimization
 
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a narrow range
+RAW LOSS SAMPLES (LAST 100 EPOCHS): loss samples fluctuate very slightly within a narrow range
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.0311   0.0408   0.0363   0.0416   0.0361   0.0415   0.0393   0.0354   0.0342   0.0365
   0.0378   0.0319   0.0398   0.0350   0.0324   0.0328   0.0376   0.0422   0.0328   0.0330
@@ -24,19 +24,21 @@ RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a
   0.0375   0.0368   0.0391   0.0307   0.0332   0.0419   0.0393   0.0374   0.0375   0.0351
   0.0400   0.0308   0.0379   0.0376   0.0334   0.0312   0.0362   0.0399   0.0471   0.0400
 (C5) Minimal Interpretation : 
--suggest a stable optimization with minute late-stage gains
+-suggests stable optimization with minor late-stage gains
 WRITTEN OBSERVATION:
--The training process shows a relatively stable,smooth decreasing trend, with slight oscillations. After ~100 epochs, it began plateauing and shows limited late-stage gains
--Overall, this loss behavior shows that depth2 model converged faster and more stably, entering a plateau phase after ~100 epochs in contrase to the depth1(baseline) model. Despite entering a plateau phase, it continues to show diminishing improvement in the late-state.
+-The training process shows a smooth and stable decreasing trend with slight oscillations.
+ After ~100 epochs, it began plateauing and showed limited late-stage gains
+-Overall, this loss behavior shows that the depth-2 model converged faster and more stably. It enters a plateau phase after ~100 epochs, in contrast to the depth-1 (baseline) model, which plateaus much later. Despite entering a plateau phase, minor improvements persist during later stages.
+
 
 TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9905 ± 0.0032
 TEST  ACCURACY(MEAN OF 10 RUNS): 0.9788 ± 0.0072
 
 
 
-Gradient Norm observation : 
+Gradient Norm Observation : 
 AVG GRADIENT NORM:  25.675921537012673
 GRADIENT NORM STANDARD DEVIATION:  3.1488650420964497
 COEFFICIENT OF VARIATION:  0.1226388325559127 
-NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : the gradient norms fluctuate within a determined range from ~17.5(min) to ~37.5(max), showing no strong monotonic trend  .The relatively low coefficient of variation (≈0.12) suggests that gradient magnitudes remain well-regulated throughout training, indicating stable backpropagation behavior for the depth-2 network.
+NOTABLE GRADIENT NORM BEHAVIOR (GRADIENT REGIME) : the gradient norms fluctuate within a defined range from ~17.5(min) to ~37.5(max), showing no strong monotonic trend. The relatively low coefficient of variation (≈0.12) suggests that gradient magnitudes remain well-regulated throughout training, indicating stable backpropagation behavior for the depth-2 network.
 

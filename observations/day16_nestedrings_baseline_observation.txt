@@ -6,11 +6,11 @@ Loss observation :
 -Mostly stable with slight oscillations
 (C3) Plateau Phase: 
 -No clear plateau observed; convergence slows significantly after ~400 epochs
-(C4) Late-stage gain: 
+(C4) Late-stage gains: 
 -Continued minor improvement throughout late training stages
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS): 
+RAW LOSS SAMPLES(LAST 100 EPOCHS): 
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.1437   0.1436   0.1452   0.1431   0.1437   0.1423   0.1447   0.1448   0.1438   0.1428
   0.1434   0.1431   0.1417   0.1439   0.1426   0.1425   0.1428   0.1432   0.1416   0.1418
@@ -23,21 +23,23 @@ RAW LOST SAMPLES(LAST 100 EPOCHS):
   0.1367   0.1362   0.1365   0.1373   0.1379   0.1366   0.1367   0.1369   0.1369   0.1370
   0.1356   0.1362   0.1350   0.1368   0.1369   0.1373   0.1371   0.1356   0.1361   0.1354
 (C5) Minimal Interpretation : 
--Exhibits small, continuous gains in the late-state even though converging process slowed down
+-Exhibits small, continuous gains in the late-stage even though the convergence process slowed down
 
 WRITTEN OBSERVATION:
-The training loss curve shows a consistent decreasing trend with minute oscillations throughout training. Contrary to the expected curvature during the early phase (from epoch 0 to approximately epoch 200), the loss decreases gradually rather than rapidly. The convergence process slows noticeably after around 400 epochs, with no clear plateau observed even in the final training stages. Minor but continuous improvements persist until the end of training. Overall, this behavior suggests the increased geometric complexity of Nested Rings shifts the learning dynamics from 'rapid convergence' to a 'persistent refinement' process.
+The training loss curve shows a consistent decreasing trend with small oscillations throughout training. Unlike the rapid initial drop observed in the circle dataset, the loss decreases gradually during the early phase (from epoch 0 to approximately epoch 200), the loss decreases gradually rather than rapidly. The convergence process slows noticeably after around 400 epochs, with no clear plateau observed even in the final training stages. Minor but consistent improvements persist until the end of training. Overall, this suggests that the increased geometric complexity of the nested rings dataset may alter the learning dynamics from rapid convergence to gradual refinement.
+
 
 TRAIN ACCURACY(MEAN OF 10 RUNS): 0.9658 ± 0.0089
 TEST  ACCURACY(MEAN OF 10 RUNS): 0.9563 ± 0.0150
 
 (THESE FOLLOWING METRICS ARE ADOPTED TO SUIT dataset1_reflection_dataset2_protocol.md)
 
-Gradient Norm observation : 
+Gradient Norm Observation : 
 AVG GRADIENT NORM:  14.486515248474717
 GRADIENT NORM STANDARD DEVIATION:  0.7935083280157993
 COEFFICIENT OF VARIATION : 0.05477565269531247
-NOTABLE GRADNORM BEHAVIOR (GRADIENT REGIME) : gradient norms remain within a narrow range(approximately 14-15) with regular spikes and a mild increasing trend over training
+NOTABLE GRADIENT NORM BEHAVIOR (GRADIENT REGIME) : gradient norms remain within a narrow range (approximately 14-15) with regular spikes and a mild increasing trend over the course of training
+
 
 
 

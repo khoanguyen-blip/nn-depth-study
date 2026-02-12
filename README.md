@@ -14,7 +14,7 @@ To isolate the effect of network depth, the following variables were kept consta
 - Activation functions
 - Weight initialization strategy
 - Random seed
-Network depth is the only variable intentionally modified.
+Network depth is the only variable intentionally varied.
 
 ## Introduction
 This project explores how the number of hidden layers affects the learning behavior of a simple fully connected neural network implemented from scratch using NumPy.
@@ -30,7 +30,7 @@ Beyond that range, additional depth may introduce unnecessary optimization compl
 
 ## Fairness in Depth Comparison
 During early experimentation, the dead ReLU phenomenon emerged in deeper models, causing training to stall completely.
-If left unaddressed, this issue would shift the study away from depth analysis and toward survivability under activation behavior.
+If left unaddressed, this issue would shift the study away from depth analysis and toward analyzing activation failure rather than depth effects.
 To preserve fairness and experimental integrity:
 
 - The learning rate was reduced from 0.1 to 0.001, as higher values disproportionately destabilized deeper models
@@ -62,7 +62,7 @@ From this baseline, only the network depth or dataset was modified depending on 
 Experiment Timeline
 - Day 9–14: Circle dataset experiments
 - Day 16–19: Nested Rings dataset experiments
-All numerical results, visualizations, and experimental observations are documented in :
+All numerical results, visualizations, and experimental observations are documented in:
 - results/
 - observations/ 
 
@@ -91,4 +91,34 @@ Online Learning Resources and Insights
 
 
 
+## Installation
+1. Clone the repository
+```bash
+git clone https://github.com/khoanguyen-blip/nn-depth-study.git
+cd nn-depth-study
+```
+2. Create a virtual environment (recommended)
+```bash
+python -m venv venv
+source venv/bin/activate  # macOS / Linux
+```
+3. Install dependencies
+```bash
+pip install -r requirements/dev.txt
+```
 
+
+## How to Run
+Main experiments were conducted using Jupyter notebooks.
+Start Jupyter
+```bash 
+jupyter notebook
+```
+Then open the relevant notebook inside the notebooks/ directory.
+Results and figures will be saved in:
+- 'results/'
+- 'figures/'
+
+Note:
+Some early notebooks (pre-rebaseline phase) may not run under the final configuration.
+They are preserved for transparency to reflect the original experimental progression.

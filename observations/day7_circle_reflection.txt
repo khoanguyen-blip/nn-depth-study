@@ -1,2 +1,5 @@
-REFLECTION: 
-- Baseline circle is reproducible and loss behavior is consistent with Day 6 observation.
+REFLECTION:
+
+- Baseline circle setup is reproducible and stable.
+- Loss dynamics align with Day 6 observations.
+- Week 1 ends with a validated depth = 1 reference configuration.

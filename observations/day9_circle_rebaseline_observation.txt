@@ -3,14 +3,14 @@ Loss observation :
 (C1) Global Trend : 
 -Smooth decrease
 (C2) Stability : 
--Stable with slight oscillation
+-Stable with slight oscillations
 (C3) Plateau Phase: 
--Plateau after ~ 100 epochs
+-Enters a plateau phase after approximately 100 epochs
 (C4) Late-stage gain: 
 -Diminishing improvement
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS):
+RAW LOSS SAMPLES(LAST 100 EPOCHS):
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.0330   0.0329   0.0326   0.0324   0.0323   0.0326   0.0323   0.0323   0.0324   0.0326
   0.0324   0.0327   0.0325   0.0324   0.0322   0.0324   0.0322   0.0326   0.0323   0.0334
@@ -25,11 +25,11 @@ RAW LOST SAMPLES(LAST 100 EPOCHS):
 
 
 (C5) Minimal Interpretation : 
--suggest stable but slow optimization with limited late-stage gains
+-suggests stable but slow optimization with limited late-stage gains
 
 
 WRITTEN OBSERVATION: 
-The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 100 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. Overall, this behavior suggests stable optimization with limited late-stage gains
+The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 100 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. 
 Overall, this behavior suggests stable but slow optimization with limited late-stage gains.
 
 ACCURACY(TRAINING, SINGLE RUN): 0.9945

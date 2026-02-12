@@ -3,14 +3,14 @@ Loss observation :
 (C1) Global Trend : 
 -Smooth decrease
 (C2) Stability : 
--Stable with slight and observable oscillations
+-Stable with observable oscillations
 (C3) Plateau Phase: 
--Enter plateau-like phase after ~ 100 epochs
+-Enters a plateau phase after approximately 100 epochs
 (C4) Late-stage gain: 
--Diminishing improvement
+-Slower improvement in later epochs
 
 
-RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a bounded but noticeably wider range ,with occasional spikes
+RAW LOSS SAMPLES(LAST 100 EPOCHS): Loss samples fluctuate within a bounded but noticeably wider range, with occasional spikes.
 (THESE SAMPLES ARE REPRESENTATIVE)
 0.0123   0.0063   0.0247   0.0085   0.0116   0.0100   0.0064   0.0075   0.0073   0.0073
   0.0081   0.0064   0.0098   0.0083   0.0073   0.0061   0.0053   0.0055   0.0079   0.0102
@@ -23,12 +23,12 @@ RAW LOST SAMPLES(LAST 100 EPOCHS): loss samples fluctuate very slightly within a
   0.0055   0.0078   0.0076   0.0114   0.0079   0.0067   0.0050   0.0072   0.0065   0.0089
   0.0054   0.0138   0.0067   0.0074   0.0069   0.0064   0.0080   0.0061   0.0062   0.0058
 (C5) Minimal Interpretation : 
--suggests overall stable optimization with increased oscillations and diminishing late-stage gains
+-suggests stable optimization with more noticeable oscillations and limited late-stage gains
 
 
 WRITTEN OBSERVATION: 
-The training loss showed a smooth decrease throughout training, with mostly stable behavior and observable oscillations. After approximately 100 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. 
-Overall, this behavior suggests that the depth-4 model converges stably but reaches diminishing returns early in training.
+The training loss showed a smooth decrease throughout training, with mostly stable behavior and observable oscillations. After approximately 100 epochs, the loss began to plateau with slower improvement during later stages.
+Overall, this behavior suggests that the depth-4 model converges stably but transitions into a slower improvement phase relatively early in training.
 
 ACCURACY(TRAINING, SINGLE RUN): 0.9965
 _____ADDITIONAL METRICS_____
@@ -38,7 +38,7 @@ TEST  ACCURACY(MEAN OF 10 RUNS): 0.9933 ± 0.0047
 
 
 CONTEXT UPDATE(APPLICABLE TO PREVIOUS DAYS):
-As of Day 11, model performance for this depth is evaluated using both training accuracy and testing accuracy, averaged across 10 independent runs with different random seeds. This update addresses potential luck bias present in earlier single-run evaluations.
+As of Day 11, model performance for this depth is evaluated using both training accuracy and testing accuracy, averaged across 10 independent runs with different random seeds. This update reduces variance associated with single-seed evaluation.
 The displayed loss curve is taken from a representative single run (fixed seed) and serves to characterize the typical training dynamics for this depth.
 
 

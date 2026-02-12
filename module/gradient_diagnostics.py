@@ -1,8 +1,11 @@
-from layers import Linear  
+from module.layers import Linear  
 import numpy as np 
-#mục tiêu : tạo ra hàm gradient_norm(model)
+
 
 def gradient_norm(model):
+    """
+    Compute L2 norm of weight gradients across all trainable layers.
+    """
     sum_square = 0 
     for layer in model: 
         if hasattr(layer,"dW"):
@@ -17,35 +20,41 @@ def training_norm(
     epochs=1000,
     batch_size = 32,
     lr=0.001):
-    
+    """
+    Train model and record mean gradient norm per epoch.
+    Returns
+    -------
+    list of float
+        Mean gradient norm for each epoch.
+    """
     num_samples = X.shape[0]
     epochs_norms = []
     for epoch in range(epochs):
-        #____Shuffle____
+        
         perm = np.random.permutation(num_samples)
         X_shuffled = X[perm]
         y_shuffled = y[perm]
         
-        #SGD theo batch 
+        
         batch_norms = []
         for i in range(0,num_samples,batch_size):
             Xb = X_shuffled[i:i+batch_size]
             yb = y_shuffled[i:i+batch_size]
             
-            #____Forward____
+            
             A = Xb 
             for layer in model: 
                 A = layer.forward(A)
             
             y_hat = A 
             
-            #____Loss____
-            loss = loss_func.forward(y_hat ,yb) #cái này đang là 1 vector
+            
+            loss = loss_func.forward(y_hat ,yb) 
             
             
             
 
-            #____backward____
+            
             dA = loss_func.backward()
             
             for layer in reversed(model):

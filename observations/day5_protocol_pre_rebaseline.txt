@@ -1,3 +1,6 @@
+Note: 
+This protocol reflects the configuration before the rebaseline event.
+He initialization and learning rate adjustments were introduced later.
 --------BASELINE SETUP--------
 .Dataset : circle(N = 2000, r =0.5)
 .Task: binary classification 

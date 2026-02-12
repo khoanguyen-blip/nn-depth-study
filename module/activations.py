@@ -6,7 +6,6 @@ class ReLU:
 
     def backward(self, dA):
         return dA * (self.Z > 0)
-#cấu trúc chung của các activations : forward là định nghĩa toán học, backward là tính dL/dZ = dL/dA *dA/dZ(cũng chính là đạo hàm activation)
 
 class Sigmoid:
     def forward(self,Z): 
