@@ -1,10 +1,5 @@
 ### NN-DEPTH-STUDY
-This is an observational study focused on optimization dynamics rather than benchmark performance.
-
-## A Small Observational Study on Neural Network Depth (NumPy)
-This project investigates how neural network depth influences learning behavior under controlled experimental conditions.
-Rather than optimizing for performance, the study focuses on loss dynamics, gradient behavior, and training stability as depth increases.
-All neural networks in this project are implemented entirely from scratch using NumPy, without relying on any deep learning frameworks.
+is an observational research project investigating how network depth affects optimization dynamics under strictly controlled experimental conditions. Rather than focusing on benchmark accuracy, the study analyzes loss behavior, gradient norms, and training stability across increasing depths. All models are implemented from scratch using NumPy.
 
 ## Controlled Setup (Fixed Variables)
 To isolate the effect of network depth, the following variables were kept constant across all experiments:
@@ -49,7 +44,7 @@ To ensure fair comparison across depths:
 - Identical hyperparameters across depths
 - Post-rebaseline configuration (Dataset 1 stabilized setup)
 
-Libraries Used
+## Libraries Used
 The following libraries were used during experimentation:
 - numpy
 - matplotlib
@@ -65,6 +60,14 @@ Experiment Timeline
 All numerical results, visualizations, and experimental observations are documented in:
 - results/
 - observations/ 
+
+## Key Findings
+Key Findings
+Increasing depth does not consistently improve performance under controlled conditions.
+On a simple nonlinear dataset (Circle), performance saturated across depths while gradient instability increased.
+On a more complex dataset (Nested Rings), performance improved up to an intermediate depth (≈4 layers) and then plateaued.
+Gradient norm statistics increased with depth and revealed optimization instability more clearly than accuracy alone.
+Beyond a limited effective range, additional depth increased optimization complexity without proportional generalization gains.
 
 ## Contributions
 
