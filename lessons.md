@@ -125,7 +125,14 @@ That subtle saturation was the most important pattern in the entire study.
 Architectural scaling does not guarantee proportional learning gains.
 
 ---
-## 8. Control Was Harder Than Optimization
+## 8. Lack of Knowledge in Saving Records
+Early experiments relied on screenshots instead of programmatically saving figures, making visual results non-reproducible and manually dependent.
+All figures were later replaced with deterministic plt.savefig() calls and standardized paths to ensure consistent, regenerable artifacts.
+### Lesson:
+Reproducibility includes how results are stored — not just how models are trained.
+
+---
+## 9. Control Was Harder Than Optimization
 It would have been easy to:
 Tune hyperparameters per depth.
 Adjust width.
@@ -145,7 +152,7 @@ Made the project harder — but clearer.
 Scientific control requires restraint.
 
 ---
-## 9. Writing It Honestly Was Hard
+## 10. Writing It Honestly Was Hard
 Some early notebooks no longer run under the final configuration.
 They remain in the repository.
 Not because they are perfect.
@@ -156,7 +163,7 @@ But hiding them would be worse.
 Transparency strengthens credibility more than polish does.
 
 ---
-## 10. What I Learned About Neural Networks
+## 11. What I Learned About Neural Networks
 - From a purely academic standpoint:
 Depth influences gradient magnitude and variability.
 Instability increases with depth on simple datasets.
@@ -165,7 +172,7 @@ Gradient metrics can reveal optimization stress more clearly than accuracy.
 But that is only half the story.
 
 ---
-## 11. What I Learned About Research
+## 12. What I Learned About Research
 I learned that:
 Early conclusions are often metric-limited.
 Fair comparisons require restarting.
@@ -176,7 +183,7 @@ Research is not about being right.
 It is about not lying to yourself.
 
 ---
-## 12. What I Learned About Myself
+## 13. What I Learned About Myself
 I learned that I am tempted to:
 Believe my initial hypothesis.
 Trust clean curves too quickly.
