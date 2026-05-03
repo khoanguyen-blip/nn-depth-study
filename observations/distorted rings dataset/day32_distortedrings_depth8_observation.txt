@@ -1,0 +1,38 @@
+Day 32 - Depth8 Distortedrings Classification 
+Loss observation: 
+(C1) Global Trend:
+- Smooth decrease
+(C2) Stability:
+- Mostly stable with slight oscillation
+(C3) Plateau Point:
+- Plateau after ~400 epochs
+(C4) Late-stage Gain:
+- Diminishing improvement
+
+
+RAW LOSS SAMPLES (LAST 400 EPOCHS): loss samples vary within a similar bounded range compared to shallower models
+(THESE SAMPLES ARE REPRESENTATIVE)
+0.0400   0.0524   0.0727   0.0480   0.0429   0.0643   0.0506   0.0380   0.0525   0.0605
+  0.0652   0.0573   0.0439   0.0600   0.0616   0.0459   0.0440   0.0439   0.0451   0.0597
+  0.0603   0.0508   0.0457   0.0667   0.0470   0.0465   0.0513   0.0494   0.0466   0.0466
+  0.0559   0.0445   0.0668   0.0444   0.0627   0.0532   0.0560   0.0528   0.0515   0.0577
+  0.0458   0.0504   0.0475   0.0561   0.0482   0.0686   0.0535   0.0454   0.0440   0.0657
+  0.0596   0.0806   0.0523   0.0437   0.0433   0.0371   0.0807   0.0573   0.0465   0.0444
+  0.0515   0.0648   0.0674   0.0429   0.0482   0.0433   0.0494   0.0430   0.0759   0.0456
+  0.0570   0.0401   0.0506   0.0437   0.0578   0.0543   0.0504   0.0577   0.0627   0.0450
+  0.0391   0.0482   0.0755   0.0507   0.0380   0.0528   0.0563   0.0485   0.0366   0.0487
+  0.0464   0.0369   0.0639   0.0584   0.0441   0.0336   0.0558   0.0566   0.0311   0.0556
+(C5) Minimal Interpretation:
+- suggests stable optimization with limited late-stage gains
+
+WRITTEN OBSERVATION:
+The training loss showed a smooth decrease throughout training, with mostly stable behavior and slight oscillations. After approximately 400 epochs, the loss began to plateau, exhibiting diminishing improvement during later stages. Overall, this behavior suggests stable optimization with limited late-stage gains.
+
+TRAIN ACCURACY (MEAN OF 10 RUNS): 0.9783 ± 0.0064
+TEST  ACCURACY (MEAN OF 10 RUNS): 0.9690 ± 0.0120
+
+Gradient Norm Observation : 
+AVG GRADIENT NORM:  40.87019205476992
+GRADIENT NORM STANDARD DEVIATION:  6.602158190833177
+COEFFICIENT OF VARIATION:  0.16153969088243236
+NOTABLE GRADIENT NORM BEHAVIOR (GRADIENT REGIME) : The gradient norms fluctuate within a controlled range (~20 to ~60) with a slight decreasing trend. The relatively low coefficient of variation suggests stable gradient propagation, with no indication of severe vanishing or exploding gradients.

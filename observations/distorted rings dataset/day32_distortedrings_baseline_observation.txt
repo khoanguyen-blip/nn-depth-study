@@ -1,0 +1,45 @@
+Day 32 - Baseline Distortedrings Classification 
+Loss observation : 
+(C1) Global Trend:
+- Slow decrease
+(C2) Stability:
+- Mostly stable with slight oscillations
+(C3) Plateau Point:
+- No clear plateau
+(C4) Late-stage Gain:
+- Continued minor improvement
+
+
+RAW LOSS SAMPLES(LAST 100 EPOCHS): 
+(THESE SAMPLES ARE REPRESENTATIVE)
+0.2082   0.2074   0.2104   0.2079   0.2067   0.2090   0.2087   0.2081   0.2084   0.2046
+  0.2061   0.2073   0.2097   0.2102   0.2070   0.2089   0.2080   0.2067   0.2076   0.2057
+  0.2077   0.2047   0.2061   0.2059   0.2059   0.2086   0.2070   0.2055   0.2042   0.2048
+  0.2067   0.2071   0.2062   0.2031   0.2045   0.2038   0.2057   0.2072   0.2060   0.2053
+  0.2053   0.2056   0.2027   0.2045   0.2034   0.2033   0.2028   0.2025   0.2011   0.2039
+  0.2026   0.2033   0.2045   0.2000   0.2038   0.2028   0.2039   0.2042   0.2030   0.2030
+  0.2054   0.2026   0.2041   0.2011   0.1991   0.2015   0.2032   0.2009   0.2029   0.1991
+  0.2031   0.2000   0.2038   0.2009   0.1994   0.1997   0.2014   0.2016   0.2040   0.2009
+  0.1997   0.2030   0.2012   0.2015   0.2015   0.2005   0.1986   0.2013   0.2008   0.2002
+  0.1973   0.2006   0.2004   0.2050   0.1983   0.1988   0.2016   0.1973   0.2007   0.1998
+(C5) Minimal Interpretation:
+- suggests stable optimization with slow convergence
+
+WRITTEN OBSERVATION:
+The training loss showed a slow decrease throughout training, with mostly stable behavior and slight oscillations. After approximately no clear plateau, the loss exhibited continued minor improvement. Overall, this behavior suggests stable optimization with slow convergence.
+
+  
+TRAIN ACCURACY(MEAN OF 10 RUNS): 0.8992 ± 0.0259
+TEST  ACCURACY(MEAN OF 10 RUNS): 0.8938 ± 0.0259
+
+
+
+Gradient Norm Observation : 
+AVG GRADIENT NORM:  18.74870296662563
+GRADIENT NORM STANDARD DEVIATION:  1.3191915637577627
+COEFFICIENT OF VARIATION:  0.07036175068248944
+NOTABLE GRADIENT NORM BEHAVIOR (GRADIENT REGIME) : The gradient norm remains within a relatively wide range (~12 to ~34), with a spread of about 22 units. This range is noticeably larger compared to the circle dataset (~9 units) and the nested rings dataset (~1 unit).
+
+
+
+
