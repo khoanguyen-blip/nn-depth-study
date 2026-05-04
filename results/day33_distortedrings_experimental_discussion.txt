@@ -1,0 +1,45 @@
+Day 33: DistortedRings Classification Experimental Results
+
+Aspect 1: Loss behavior across depths
+
+(C1) Global trend:
+All models exhibit a clear downward trend in loss, with a rapid convergence rate in the early stages that slows down over time.
+
+(C2) Stability:
+The models maintain stability throughout the training process, with minor fluctuations and occasional slight spikes, particularly in models with greater depths.
+
+(C3) Plateau phase:
+Most models (except for the baseline) exhibit a plateau phase, during which the rate of improvement decreases significantly.
+
+(C4) Late-stage gain:
+No significant improvement is observed in the late stages; the loss primarily fluctuates around a certain level after entering the plateau phase.
+
+Summary:
+Overall, models on the distorted rings dataset show stable convergence behavior, characterized by rapid initial reduction, followed by a gradual slowdown leading into a plateau. Fluctuations exist but do not significantly affect the overall stability of the optimization process.
+
+Aspect 2: Performance behavior with increasing depth
+
+Training accuracy:
+All models (except for the baseline at ~89%) achieved over 96%. Depth4 and depth6 achieved the highest (~98%), followed by depth8 (~97%) and depth2 (~96%).
+
+Test accuracy:
+The trend is similar to training accuracy, with models reaching over 95% (except for the baseline at ~89%). Depth4 and depth6 reached approximately ~97%, depth8 approximately ~96.9%, and depth2 approximately ~95%.
+
+Summary:
+Training and testing accuracies show a similar trend, with testing accuracy being approximately ~1% lower. Increasing depth improves performance compared to the baseline, but the differences between deeper models (depth4, depth6, depth8) are not significant.
+
+Aspect 3: Gradient Norm (computed across all layers)
+
+Mean & Std:
+Deeper models tend to have higher mean gradient norm values and larger standard deviations, reflecting a higher degree of volatility during the optimization process.
+
+Coefficient of variation & gradient regime:
+Although gradient norms fluctuate within a wider range in deeper models, the coefficient of variation remains within a controllable range. There are no clear signs of gradient vanishing or exploding phenomena, indicating that gradient propagation remains stable.
+
+DISCUSSION WRAP-UP
+
+Experimental results show that increasing depth significantly improves performance compared to the baseline. However, as depth continues to increase (from depth4 onwards), these benefits are no longer obvious, as evidenced by the deeper models achieving comparable performance.
+
+Under fixed training conditions, deeper models maintain stable optimization capabilities but do not exhibit a clear advantage over shallower models. This suggests that the effectiveness of increasing depth may be limited by the current training configuration.
+
+Therefore, the lack of clear improvement in deeper models may not stem entirely from architectural limitations, but could instead be related to the sensitivity of these models to optimization conditions.
