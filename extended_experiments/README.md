@@ -21,3 +21,4 @@ Concretely: if deeper models are given proper training conditions (adaptive opti
 To address this question, Phase 2 maintains the same experimental setup as Phase 1, with a single modification: the learning rate strategy. All model architectures, datasets, and evaluation procedures remain unchanged.
 Instead of using a fixed learning rate, deeper networks are trained with a simple learning rate schedule to better support optimization over longer training horizons. No other changes, such as different optimizers or architectural adjustments, are introduced.
 This controlled modification isolates the role of learning rate dynamics in training deeper networks, allowing us to examine whether the previously observed underperformance is a result of optimization difficulty rather than an inherent limitation of depth.
+

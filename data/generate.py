@@ -48,3 +48,20 @@ def generate_distortedrings_data(n=2000, seed=42):
     y_label[mask_middle] = 1
 
     return X, y_label.reshape(-1, 1)
+
+
+
+def generate_checkerboard_data(n=2000, seed=42):
+    np.random.seed(seed)
+
+    X = np.random.uniform(-1, 1, size=(n, 2))
+
+    grid_size = 6
+    cell_size = 2 / grid_size
+
+    cell_x = np.floor((X[:, 0] + 1) / cell_size).astype(int)
+    cell_y = np.floor((X[:, 1] + 1) / cell_size).astype(int)
+
+    y = ((cell_x + cell_y) % 2).astype(int)
+
+    return X, y.reshape(-1, 1)
